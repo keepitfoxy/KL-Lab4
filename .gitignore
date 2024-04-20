@@ -1,2 +1,3 @@
 # ignore ALL files with log in name
 *log*
+*errorx*
