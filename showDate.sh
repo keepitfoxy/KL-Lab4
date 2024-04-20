@@ -13,10 +13,21 @@ logs() {
     done
 }
 
+# show help
+show_help() {
+    echo "Użycie: $0 [opcja]"
+    echo "Opcje:"
+    echo "  --date     : Wyświetla dzisiejszą datę."
+    echo "  --logs [N] : Tworzy N logów. Domyślnie tworzy 100 logów, jeśli nie podano liczby N."
+    echo "  --help     : Wyświetla tę pomoc."
+}
+
 if [[ "$1" == "--date" ]]; then
     show_date
 elif [[ "$1" == "--logs" ]]; then
     logs "$2"
+elif [[ "$1" == "--help" ]]; then
+    show_help
 else
     logs
 fi
