@@ -17,16 +17,16 @@ logs() {
 show_help() {
     echo "Użycie: $0 [opcja]"
     echo "Opcje:"
-    echo "  --date     : Wyświetla dzisiejszą datę."
-    echo "  --logs [N] : Tworzy N logów. Domyślnie tworzy 100 logów, jeśli nie podano liczby N."
-    echo "  --help     : Wyświetla tę pomoc."
+    echo "  --date, -d  : Wyświetla dzisiejszą datę."
+    echo "  --logs, -l [N] : Tworzy N logów. Domyślnie tworzy 100 logów, jeśli nie podano liczby N."
+    echo "  --help, -h     : Wyświetla tę pomoc."
 }
 
-if [[ "$1" == "--date" ]]; then
+if [[ "$1" == "--date" || "$1" == "-d" ]]; then
     show_date
-elif [[ "$1" == "--logs" ]]; then
+elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
     logs "$2"
-elif [[ "$1" == "--help" ]]; then
+elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
     show_help
 else
     logs
